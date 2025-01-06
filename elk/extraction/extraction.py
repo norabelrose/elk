@@ -1,4 +1,5 @@
 """Functions for extracting the hidden states of a model."""
+
 import os
 from collections import defaultdict
 from dataclasses import InitVar, dataclass, replace
