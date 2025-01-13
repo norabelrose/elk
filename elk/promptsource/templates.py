@@ -215,9 +215,11 @@ class Template(yaml.YAMLObject):
         # Replaces any occurrences of the "|||" separator in the example, which
         # which will be replaced back after splitting
         protected_example = {
-            key: value.replace("|||", cls.pipe_protector)
-            if isinstance(value, str)
-            else value
+            key: (
+                value.replace("|||", cls.pipe_protector)
+                if isinstance(value, str)
+                else value
+            )
             for key, value in example.items()
         }
         return protected_example
