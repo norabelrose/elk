@@ -78,9 +78,9 @@ class SweepByDsMultiplot:
                         y=dataset_data["auroc_estimate"],
                         mode="lines",
                         name=ensemble,
-                        showlegend=False
-                        if dataset_name != unique_datasets[0]
-                        else True,
+                        showlegend=(
+                            False if dataset_name != unique_datasets[0] else True
+                        ),
                         line=dict(color=color_map[ensemble]),
                     ),
                     row=row,

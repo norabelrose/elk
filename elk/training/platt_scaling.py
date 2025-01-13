@@ -12,8 +12,7 @@ class PlattMixin(ABC):
     scale: nn.Parameter
 
     @abstractmethod
-    def __call__(self, *args: Any, **kwds: Any) -> Any:
-        ...
+    def __call__(self, *args: Any, **kwds: Any) -> Any: ...
 
     def platt_scale(self, labels: Tensor, hiddens: Tensor, max_iter: int = 100):
         """Fit the scale and bias terms to data with LBFGS.
